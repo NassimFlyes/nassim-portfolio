@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nassim Flyes – Terminal Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -73,59 +75,94 @@
           </div>
         </div>
 
-        <!-- Studium Section -->
-        <!-- === Studium Section === -->
-<!-- === Studium Section === -->
-<div class="studium-section" id="studium">
-  <span class="prompt">$ studium</span>
-
-  <!-- Education Icon -->
-  <div class="education-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 10l-10-5L2 10l10 5 10-5z"/>
-      <path d="M6 12v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5"/>
-    </svg>
-  </div>
-
-  <h2>Bildung</h2>
-
-  <div class="studium-grid">
-    <!-- Card 1 -->
-    <div class="studium-card">
-      <div class="studium-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M8 12a4 4 0 1 0 8 0 4 4 0 1 0-8 0z"/>
-        </svg>
-      </div>
-      <h3>Abitur – Schwerpunkt Physik</h3>
-      <ul>
-        <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
-        <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
-        <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
-      </ul>
+        <div class="terminal" id="studium-terminal">
+    <div class="terminal-header">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="studium-card">
-      <div class="studium-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-          <path d="M20 6v12M23 9l-3 3 3 3"/>
+    <div class="section" id="studium">
+      <span class="prompt">$ studium</span>
+      <div class="education-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10l-10-5L2 10l10 5 10-5z"/>
+          <path d="M6 12v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5"/>
         </svg>
       </div>
-      <h3>ISMO NTIC – Informatik & Netzwerke</h3>
-      <ul>
-        <li><strong>Ort:</strong> Tétouan</li>
-        <li><strong>Note:</strong> Gut (14,66 / 20)</li>
-      </ul>
-      <button class="see-more-btn" onclick="toggleDetails()">Mehr erfahren</button>
 
-      <div id="details" class="details-hidden">
-        <p>Hier können Sie später zusätzliche Informationen hinzufügen – Projekte, Spezialisierung, Praktika usw.</p>
+      <!-- Cards container -->
+      <div class="studium-grid">
+        <!-- Card 1 -->
+        <div class="card-container">
+          <div class="card">
+            <h3>Abitur – Schwerpunkt Physik</h3>
+            <ul>
+              <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
+              <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
+              <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-container">
+          <div class="card">
+            <h3>ISMO NTIC – Informatik & Netzwerke</h3>
+            <ul>
+              <li><strong>Ort:</strong> Tétouan</li>
+              <li><strong>Note:</strong> Gut (14,66 / 20)</li>
+            </ul>
+            <button class="see-more-btn" onclick="togglePopup()">Mehr erfahren</button>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Popup window -->
+  <!-- Popup window -->
+<div id="popup-overlay" class="popup-hidden" onclick="closePopup(event)">
+  <div class="popup-content">
+    <span class="close-btn" onclick="togglePopup()">&times;</span>
+    <h3>Während meines Diploms habe ich viele Programmiersprachen und Methoden gelernt</h3>
+    <p>
+      Ich habe umfassende Kenntnisse in verschiedenen Programmiersprachen erworben, darunter HTML, CSS, JavaScript, PHP, Python und Node.js. 
+      Zusätzlich habe ich wichtige Software-Entwicklungsmethoden wie <strong>Merise</strong> und <strong>UML</strong> studiert, um komplexe Systeme zu planen und zu modellieren. 
+      Ich habe auch Tools wie <strong>Git</strong>, <strong>GitHub</strong> und <strong>GitLab</strong> intensiv genutzt, um Projekte effizient zu verwalten, Versionen zu kontrollieren und Teamarbeit zu optimieren.
+    </p>
+    <p>
+      Während meiner Ausbildung habe ich auch moderne Frameworks und Datenbanktechnologien kennengelernt, darunter React, Laravel, MySQL, MongoDB und Docker. 
+      Durch diese Erfahrungen konnte ich meine Fähigkeiten in Webentwicklung, Datenmanagement und DevOps erweitern.
+    </p>
+
+    <div class="tech-icons">
+      <!-- Programming languages -->
+      <i class="devicon-html5-plain colored"></i>
+      <i class="devicon-css3-plain colored"></i>
+      <i class="devicon-javascript-plain colored"></i>
+      <i class="devicon-react-original colored"></i>
+      <i class="devicon-laravel-plain colored"></i>
+      <i class="devicon-php-plain colored"></i>
+      <i class="devicon-python-plain colored"></i>
+      <i class="devicon-nodejs-plain colored"></i>
+
+      <!-- Databases & Tools -->
+      <i class="devicon-mysql-plain colored"></i>
+      <i class="devicon-mongodb-plain colored"></i>
+      <i class="devicon-docker-plain colored"></i>
+      <i class="devicon-git-plain colored"></i>
+      <i class="devicon-github-original colored"></i>
+      <i class="devicon-gitlab-plain colored"></i>
     </div>
   </div>
 </div>
+
+  </div>
+
+
+
+
 
 
     </main>

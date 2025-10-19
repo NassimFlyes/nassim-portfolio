@@ -7,8 +7,28 @@ toggleBtn.addEventListener('click', () => {
   toggleBtn.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
 });
 
-function toggleDetails() {
-  const details = document.getElementById("details");
-  details.classList.toggle("details-hidden");
+function togglePopup() {
+  const popup = document.getElementById('popup-overlay');
+  popup.classList.toggle('popup-hidden');
 }
+
+function closePopup(event) {
+  if (event.target.id === 'popup-overlay') {
+    togglePopup();
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const popup = document.getElementById('popup-overlay');
+    if (!popup.classList.contains('popup-hidden')) {
+      togglePopup();
+    }
+  }
+});
+
+
+
+
+
 

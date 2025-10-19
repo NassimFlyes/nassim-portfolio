@@ -145,159 +145,186 @@ h1 { font-size: 2rem; margin: 5px 0; }
 .lang-box p { margin: 0; font-weight: bold; color: #e2e8f0; }
 .lang-box span { font-weight: normal; color: #94a3b8; font-size: 0.9rem; }
 
-/* === Studium Section === */
-.studium-section {
-  background-color: #111827;
-  border-radius: 12px;
-  padding: 40px;
-  width: 90%;
-  max-width: 900px;
-  margin: 60px auto;
-  box-shadow: 0 0 30px rgba(0,0,0,0.7);
-  transition: background 0.4s ease, color 0.4s ease;
-}
+.devicon-html5-plain.colored { color: #e34f26; }
+.devicon-css3-plain.colored { color: #264de4; }
 
-.studium-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 25px;
-}
+@import url("https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap");
 
-.studium-header h2 {
-  color: #22c55e;
-  font-size: 1.8rem;
-}
-
-.studium-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.studium-card {
-  background-color: #1e293b;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.studium-card:hover {
-  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
-  transform: translateY(-6px);
-}
-
-.studium-icon {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.studium-card h3 {
-  font-size: 1.3rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.studium-card ul {
-  list-style: none;
-  padding-left: 0;
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-.studium-card li {
-  color: #e2e8f0;
-  margin-bottom: 8px;
-  line-height: 1.5;
-  font-size: 0.95rem;
-  text-align: center;
+body {
+  background: #0f0f0f;
+  color: #e5e5e5;
+  font-family: "Fira Code", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* === Mehr anzeigen Button === */
+/* Terminal container */
+.terminal {
+  background: #1a1a1a;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 0 15px #000a;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+/* Terminal header dots */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #2b2b2b;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.section {
+  padding: 20px 30px;
+}
+
+.prompt {
+  color: #22c55e;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.education-icon {
+  margin-bottom: 20px;
+}
+
+/* Cards grid */
+.studium-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-container {
+  perspective: 800px;
+}
+
+.card {
+  background: linear-gradient(145deg, #111, #222);
+  border-radius: 12px;
+  width: 320px;
+  padding: 25px;
+  color: #fff;
+  transform: rotateY(25deg) rotateX(10deg);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: rotateY(-25deg) rotateX(-10deg);
+}
+
+.card h3 {
+  color: #22c55e;
+  margin-bottom: 12px;
+}
+
+.card ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .see-more-btn {
   margin-top: 15px;
-  background-color: #22c55e;
-  color: #fff;
+  background: #22c55e;
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-family: 'Fira Code', monospace;
+  padding: 8px 14px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  color: #000;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
 .see-more-btn:hover {
-  background-color: #16a34a;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
-  transform: translateY(-3px);
+  background: #16a34a;
 }
 
-/* === Hidden Details Box === */
-#details-box {
-  margin-top: 15px;
-  background-color: #0f172a;
-  padding: 15px;
+/* Popup styles */
+#popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+.popup-hidden {
+  display: none !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popup-content {
+  background: #1e1e1e;
+  padding: 30px;
   border-radius: 10px;
-  color: #e2e8f0;
+  width: 90%;
+  max-width: 500px;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  color: #fff;
+  position: relative;
 }
 
-.details-hidden {
-  display: none;
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
 }
 
-/* === Light Mode === */
-body.light-mode .studium-section {
-  background-color: #f1f5f9;
-  color: #0f172a;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 45px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-body.light-mode .studium-card {
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+@media (max-width: 700px) {
+  .studium-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-body.light-mode .studium-card:hover {
-  box-shadow: 0 0 25px rgba(22, 163, 74, 0.4);
-  transform: translateY(-6px);
-}
 
-body.light-mode .studium-header svg,
-body.light-mode .studium-icon svg {
-  stroke: #16a34a;
-}
 
-body.light-mode .studium-card h3 {
-  color: #0f172a;
-}
 
-body.light-mode .studium-card li {
-  color: #1e293b;
-}
 
-body.light-mode .see-more-btn {
-  background-color: #16a34a;
-}
-
-body.light-mode .see-more-btn:hover {
-  background-color: #15803d;
-  box-shadow: 0 0 15px rgba(22, 163, 74, 0.4);
-}
-
-body.light-mode #details-box {
-  background-color: #e2e8f0;
-  color: #0f172a;
-}
 
 
 
