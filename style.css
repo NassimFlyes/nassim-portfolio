@@ -8,6 +8,10 @@
   transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Fira Code', monospace;
@@ -24,6 +28,7 @@ body {
 .wrap {
   display: flex;
   min-height: 100vh;
+  width: 100%;
 }
 
 /* Navigation Bar */
@@ -40,14 +45,14 @@ body {
   padding: 30px 0;
   gap: 20px;
   transition: background 0.4s ease;
-  z-index: 1000;
+  z-index: 1200;
 }
 
 .nav-bar .nav-btn,
 .nav-bar .dark-btn {
   width: 50px;
   height: 50px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
@@ -58,8 +63,10 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  outline: none;
 }
 
+/* active / hover nav */
 .nav-bar .nav-btn.active,
 .nav-bar .nav-btn:hover,
 .nav-bar .dark-btn:hover {
@@ -76,7 +83,8 @@ main {
   justify-content: center;
   align-items: flex-start;
   padding: 40px;
-  margin-left: 80px;
+  margin-left: 80px; /* space for left nav */
+  width: 100%;
 }
 
 .content {
@@ -84,6 +92,8 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* === Terminal & Sprachen Box === */
@@ -93,11 +103,12 @@ main {
   border-radius: 12px;
   padding: 40px;
   width: 700px;
-  max-width: 700px;
+  max-width: 100%;
   box-shadow: 0 0 30px rgba(0,0,0,0.7);
   transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* terminal header */
 .terminal-header {
   display: flex;
   gap: 10px;
@@ -108,13 +119,14 @@ main {
   width: 14px;
   height: 14px;
   border-radius: 50%;
+  flex: 0 0 14px;
 }
 
 .dot.red { background-color: #f56565; }
 .dot.yellow { background-color: #ecc94b; }
 .dot.green { background-color: #48bb78; }
 
-.prompt { color: #22c55e; margin-right: 10px; font-weight: 600; }
+.prompt { color: #22c55e; margin-right: 10px; font-weight: 600; display:inline-block; }
 h1 { font-size: 2rem; margin: 5px 0; }
 .role { color: #a0aec0; margin-bottom: 20px; }
 .section { margin-top: 25px; }
@@ -130,8 +142,9 @@ h1 { font-size: 2rem; margin: 5px 0; }
 
 .languages {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  width: 100%;
 }
 
 .lang-box {
@@ -139,15 +152,17 @@ h1 { font-size: 2rem; margin: 5px 0; }
   border-radius: 12px;
   padding: 15px;
   text-align: center;
-  width: 300px;
+  width: 100%;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .lang-box:hover {
   box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
   transform: translateY(-4px);
 }
-.lang-box img { width: 40px; border-radius: 5px; margin-bottom: 10px; }
+.lang-box img { width: 40px; border-radius: 5px; margin-bottom: 10px; display:block; margin-left:auto; margin-right:auto; }
 .lang-box p { margin: 0; font-weight: bold; color: #e2e8f0; }
 .lang-box span { font-weight: normal; color: #94a3b8; font-size: 0.9rem; }
 
@@ -156,33 +171,55 @@ h1 { font-size: 2rem; margin: 5px 0; }
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
   align-items: stretch;
+  width: 100%;
 }
 
+/* perspective container keeps 3D isolated per card */
 .card-container {
-  perspective: 800px;
+  perspective: 1000px;
+  width: 320px;
+  max-width: calc(50% - 10px);
+  display: inline-flex;
+  justify-content: center;
 }
 
+/* ensure card is its own stacking context, prevents hover bleed */
 .card {
   background: linear-gradient(145deg, #111, #222);
   border-radius: 12px;
   width: 320px;
-  min-height: 280px; /* reduziert für kompaktere Karten */
+  max-width: 100%;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 25px;
   color: #fff;
-  transform: rotateY(25deg) rotateX(10deg);
+  transform: rotateY(0deg) rotateX(0deg); /* default neutral transform */
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+  user-select: none;
+  isolation: isolate; /* prevents transform from affecting siblings */
 }
 
+/* hover lifts and rotates only the hovered card and brings it to top */
 .card:hover {
-  transform: rotateY(-25deg) rotateX(-10deg);
+  transform: rotateY(-18deg) rotateX(-6deg) translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+  z-index: 20;
 }
+
+/* subtle transform origin */
+.card { transform-origin: center center; }
 
 .card h3 {
   color: #22c55e;
@@ -193,6 +230,8 @@ h1 { font-size: 2rem; margin: 5px 0; }
   list-style: none;
   font-size: 14px;
   line-height: 1.6;
+  padding-left: 0;
+  margin: 0;
 }
 
 .see-more-btn {
@@ -204,12 +243,9 @@ h1 { font-size: 2rem; margin: 5px 0; }
   cursor: pointer;
   color: #000;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
-
-.see-more-btn:hover {
-  background: #16a34a;
-}
+.see-more-btn:hover { background: #16a34a; transform: translateY(-2px); }
 
 /* Popup styles */
 #popup-overlay {
@@ -221,7 +257,7 @@ h1 { font-size: 2rem; margin: 5px 0; }
   justify-content: center;
   align-items: center;
   background: rgba(0,0,0,0.7);
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .popup-hidden {
@@ -235,7 +271,7 @@ h1 { font-size: 2rem; margin: 5px 0; }
   padding: 30px;
   border-radius: 10px;
   width: 500px;
-  max-width: 500px;
+  max-width: 92%;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
   color: #fff;
@@ -260,7 +296,13 @@ h1 { font-size: 2rem; margin: 5px 0; }
   margin-top: 20px;
 }
 
-/* === Responsive Navigation (Top) === */
+/* === Responsive Navigation (Top) & general mobile fixes === */
+@media (max-width: 1024px) {
+  .card-container { max-width: 47%; width: 47%; }
+  .card { width: 100%; }
+  .terminal, .sprachen-box { width: 90%; padding: 30px; }
+}
+
 @media (max-width: 768px) {
   .nav-bar {
     flex-direction: row;
@@ -271,12 +313,35 @@ h1 { font-size: 2rem; margin: 5px 0; }
     gap: 15px;
     left: 0;
     top: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
-  main { margin-left: 0; padding-top: 80px; }
+
+  main {
+    margin-left: 0;
+    padding-top: 80px; /* give space for the fixed top nav */
+  }
+
   .terminal,
-  .sprachen-box { width: 95%; max-width: 600px; }
-  .studium-grid { flex-wrap: wrap; }
-  .card { width: 90%; min-height: auto; }
+  .sprachen-box {
+    width: 95%;
+    max-width: 600px;
+    padding: 24px;
+  }
+
+  .studium-grid {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .card-container { width: 100%; max-width: 100%; }
+  .card {
+    width: 100%;
+    min-height: auto;
+    transform: none;
+  }
+
+  .languages { grid-template-columns: 1fr; }
 }
 
 /* === Light Mode === */
@@ -294,7 +359,21 @@ body.light-mode .lang-box p { color: #0f172a; }
 body.light-mode .lang-box span { color: #475569; }
 body.light-mode .lang-box:hover { box-shadow: 0 0 25px rgba(22, 163, 74, 0.4); transform: translateY(-4px); }
 
-body.light-mode .studium-card { background-color: #ffffff; border: 1px solid #cbd5e1; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
-body.light-mode .studium-card:hover { box-shadow: 0 0 25px rgba(22, 163, 74, 0.4); transform: translateY(-6px); }
-body.light-mode .studium-card h3 { color: #0f172a; }
-body.light-mode .studium-card li { color: #1e293b; }
+/* apply light-mode styles to the same .card class (not .studium-card which didn't exist) */
+body.light-mode .card { background-color: #ffffff; border: 1px solid #cbd5e1; box-shadow: 0 0 10px rgba(0,0,0,0.05); color: #0f172a; }
+body.light-mode .card:hover { box-shadow: 0 0 25px rgba(22, 163, 74, 0.4); transform: translateY(-6px); }
+body.light-mode .card h3 { color: #0f172a; }
+body.light-mode .card li { color: #1e293b; }
+
+/* accessibility focus outlines */
+.nav-bar .nav-btn:focus,
+.nav-bar .dark-btn:focus,
+.see-more-btn:focus,
+.close-btn:focus {
+  outline: 2px dashed rgba(34,197,94,0.6);
+  outline-offset: 3px;
+}
+
+/* small utility helpers */
+.hidden { display: none !important; }
+.center { display:flex; justify-content:center; align-items:center; }
