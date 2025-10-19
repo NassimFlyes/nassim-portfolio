@@ -1,169 +1,163 @@
-    <!DOCTYPE html>
-    <html lang="de">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Nassim Flyes – Terminal Portfolio</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-      <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nassim Flyes – Terminal Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- Navigation -->
+    <nav class="nav-bar" aria-label="Hauptnavigation">
+      <button id="dark-mode-toggle" class="dark-btn" title="Modus wechseln">🌙</button>
+      <a class="nav-btn active" href="#ueber" title="Über mich"><i class="fa-solid fa-user"></i></a>
+      <a class="nav-btn" href="#studium" title="Studium"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a class="nav-btn" href="#erfahrung" title="Erfahrung"><i class="fa-solid fa-briefcase"></i></a>
+      <a class="nav-btn" href="#kontakt" title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
+    </nav>
 
-      <div class="wrap">
-        <!-- Navigation -->
-        <nav class="nav-bar" aria-label="Hauptnavigation">
-          <button id="dark-mode-toggle" class="dark-btn" title="Modus wechseln">🌙</button>
-          <a class="nav-btn active" href="#ueber" title="Über mich"><i class="fa-solid fa-user"></i></a>
-          <a class="nav-btn" href="#studium" title="Studium"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a class="nav-btn" href="#erfahrung" title="Erfahrung"><i class="fa-solid fa-briefcase"></i></a>
-          <a class="nav-btn" href="#kontakt" title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
-        </nav>
+    <!-- Main Content -->
+    <main>
+      <div class="content">
 
-        <!-- Main Content -->
-        <main>
-          <div class="content">
+        <!-- Terminal Box -->
+        <div class="terminal" id="ueber">
+          <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
 
-            <!-- Terminal Box -->
-            <div class="terminal" id="ueber">
-              <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-              </div>
+          <div class="section" id="presentation">
+            <span class="prompt">$ whoiam</span>
+            <h1>Nassim Flyes</h1>
+            <div class="role">Digitaler Entwickler – IT</div>
+          </div>
 
-              <div class="section" id="presentation">
-                <span class="prompt">$ whoiam</span>
-                <h1>Nassim Flyes</h1>
-                <div class="role">Digitaler Entwickler – IT</div>
-              </div>
-
-              <div class="section" id="profil">
-                <span class="prompt">$ profil</span>
-                <p>
-                  Hallo, ich heiße Nassim Flyes, bin 21 Jahre alt und arbeite im Bereich IT.
-                  Ich suche eine neue Gelegenheit bei Ihnen, um mich weiterzuentwickeln.
-                  Ich habe mehr als ein Jahr Erfahrung im Bereich Informatik.
-                  Informatik ist meine große Leidenschaft – ich interessiere mich besonders für
-                  Programmierung und neue Technologien. Ich lerne gern weiter und möchte meine
-                  Fähigkeiten in einem professionellen Umfeld verbessern.
-                </p>
-              </div>
-            </div>
-
-            <!-- Sprachen -->
-            <div class="sprachen-box" id="sprachen">
-              <span class="prompt">$ sprachen</span>
-              <div class="languages">
-                <div class="lang-box">
-                  <img src="https://flagcdn.com/w40/ma.png" alt="Arabisch">
-                  <p>Arabisch<br><span>Mutter­sprache</span></p>
-                </div>
-                <div class="lang-box">
-                  <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
-                  <p>Deutsch<br><span>B1 – Gut</span></p>
-                </div>
-                <div class="lang-box">
-                  <img src="https://flagcdn.com/w40/gb.png" alt="Englisch">
-                  <p>Englisch<br><span>Gut</span></p>
-                </div>
-                <div class="lang-box">
-                  <img src="https://flagcdn.com/w40/fr.png" alt="Französisch">
-                  <p>Französisch<br><span>Gut</span></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="terminal" id="studium-terminal">
-        <div class="terminal-header">
-          <div class="dot red"></div>
-          <div class="dot yellow"></div>
-          <div class="dot green"></div>
+          <div class="section" id="profil">
+            <span class="prompt">$ profil</span>
+            <p>
+              Hallo, ich heiße Nassim Flyes, bin 21 Jahre alt und arbeite im Bereich IT.
+              Ich suche eine neue Gelegenheit bei Ihnen, um mich weiterzuentwickeln.
+              Ich habe mehr als ein Jahr Erfahrung im Bereich Informatik.
+              Informatik ist meine große Leidenschaft – ich interessiere mich besonders für
+              Programmierung und neue Technologien. Ich lerne gern weiter und möchte meine
+              Fähigkeiten in einem professionellen Umfeld verbessern.
+            </p>
+          </div>
         </div>
 
-        <div class="section" id="studium">
-  <span class="prompt">$ studium</span>
-  <br><br>
+        <!-- Sprachen -->
+        <div class="sprachen-box" id="sprachen">
+          <span class="prompt">$ sprachen</span>
+          <div class="languages">
+            <div class="lang-box">
+              <img src="https://flagcdn.com/w40/ma.png" alt="Arabisch">
+              <p>Arabisch<br><span>Mutter­sprache</span></p>
+            </div>
+            <div class="lang-box">
+              <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
+              <p>Deutsch<br><span>B1 – Gut</span></p>
+            </div>
+            <div class="lang-box">
+              <img src="https://flagcdn.com/w40/gb.png" alt="Englisch">
+              <p>Englisch<br><span>Gut</span></p>
+            </div>
+            <div class="lang-box">
+              <img src="https://flagcdn.com/w40/fr.png" alt="Französisch">
+              <p>Französisch<br><span>Gut</span></p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Cards container -->
-  <div class="studium-grid">
-    <!-- Card 1 -->
-    <div class="card-container">
-      <div class="card">
-        <h3>Abitur – Schwerpunkt Physik</h3>
-        <ul>
-          <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
-          <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
-          <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
-          <li><strong>Dauer:</strong> 2020 bis 2021</li>
-        </ul>
-      </div>
-    </div>
+        <!-- Studium Terminal -->
+        <div class="terminal" id="studium-terminal">
+          <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+          </div>
 
-    <!-- Card 2 -->
-    <div class="card-container">
-      <div class="card">
-        <h3>ISMO NTIC – Informatik & Netzwerke</h3>
-        <ul>
-          <li><strong>Ort:</strong> Tétouan</li>
-          <li><strong>Note:</strong> Gut (14,66 / 20)</li>
-          <li><strong>Dauer:</strong> 2021 bis 2023</li>
-        </ul>
-        <button class="see-more-btn" onclick="togglePopup()">Mehr erfahren</button>
+          <div class="section" id="studium">
+            <span class="prompt">$ studium</span>
+            <br><br>
+
+            <!-- Cards container -->
+            <div class="studium-grid">
+              <!-- Card 1 -->
+              <div class="card-container">
+                <div class="card">
+                  <h3>Abitur – Schwerpunkt Physik</h3>
+                  <ul>
+                    <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
+                    <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
+                    <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
+                    <li><strong>Dauer:</strong> 2020 bis 2021</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card-container">
+                <div class="card">
+                  <h3>ISMO NTIC – Informatik & Netzwerke</h3>
+                  <ul>
+                    <li><strong>Ort:</strong> Tétouan</li>
+                    <li><strong>Note:</strong> Gut (14,66 / 20)</li>
+                    <li><strong>Dauer:</strong> 2021 bis 2023</li>
+                  </ul>
+                  <button class="see-more-btn" onclick="togglePopup()">Mehr erfahren</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popup window -->
+          <div id="popup-overlay" class="popup-hidden" onclick="closePopup(event)">
+            <div class="popup-content">
+              <span class="close-btn" onclick="togglePopup()">&times;</span>
+              <h3>Während meines Diploms habe ich viele Programmiersprachen und Methoden gelernt</h3>
+              <p>
+                Ich habe umfassende Kenntnisse in verschiedenen Programmiersprachen erworben, darunter HTML, CSS, JavaScript, PHP, Python und Node.js. 
+                Zusätzlich habe ich wichtige Software-Entwicklungsmethoden wie <strong>Merise</strong> und <strong>UML</strong> studiert, um komplexe Systeme zu planen und zu modellieren. 
+                Ich habe auch Tools wie <strong>Git</strong>, <strong>GitHub</strong> und <strong>GitLab</strong> intensiv genutzt, um Projekte effizient zu verwalten, Versionen zu kontrollieren und Teamarbeit zu optimieren.
+              </p>
+              <p>
+                Während meiner Ausbildung habe ich auch moderne Frameworks und Datenbanktechnologien kennengelernt, darunter React, Laravel, MySQL, MongoDB und Docker. 
+                Durch diese Erfahrungen konnte ich meine Fähigkeiten in Webentwicklung, Datenmanagement und DevOps erweitern.
+              </p>
+
+              <div class="tech-icons">
+                <!-- Programming languages -->
+                <i class="devicon-html5-plain colored"></i>
+                <i class="devicon-css3-plain colored"></i>
+                <i class="devicon-javascript-plain colored"></i>
+                <i class="devicon-react-original colored"></i>
+                <i class="devicon-laravel-plain colored"></i>
+                <i class="devicon-php-plain colored"></i>
+                <i class="devicon-python-plain colored"></i>
+                <i class="devicon-nodejs-plain colored"></i>
+
+                <!-- Databases & Tools -->
+                <i class="devicon-mysql-plain colored"></i>
+                <i class="devicon-mongodb-plain colored"></i>
+                <i class="devicon-docker-plain colored"></i>
+                <i class="devicon-git-plain colored"></i>
+                <i class="devicon-github-original colored"></i>
+                <i class="devicon-gitlab-plain colored"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </main>
   </div>
-</div>
 
-<!-- Popup window -->
-<div id="popup-overlay" class="popup-hidden" onclick="closePopup(event)">
-  <div class="popup-content">
-    <span class="close-btn" onclick="togglePopup()">&times;</span>
-    <h3>Während meines Diploms habe ich viele Programmiersprachen und Methoden gelernt</h3>
-    <p>
-      Ich habe umfassende Kenntnisse in verschiedenen Programmiersprachen erworben, darunter HTML, CSS, JavaScript, PHP, Python und Node.js. 
-      Zusätzlich habe ich wichtige Software-Entwicklungsmethoden wie <strong>Merise</strong> und <strong>UML</strong> studiert, um komplexe Systeme zu planen und zu modellieren. 
-      Ich habe auch Tools wie <strong>Git</strong>, <strong>GitHub</strong> und <strong>GitLab</strong> intensiv genutzt, um Projekte effizient zu verwalten, Versionen zu kontrollieren und Teamarbeit zu optimieren.
-    </p>
-    <p>
-      Während meiner Ausbildung habe ich auch moderne Frameworks und Datenbanktechnologien kennengelernt, darunter React, Laravel, MySQL, MongoDB und Docker. 
-      Durch diese Erfahrungen konnte ich meine Fähigkeiten in Webentwicklung, Datenmanagement und DevOps erweitern.
-    </p>
-
-    <div class="tech-icons">
-      <!-- Programming languages -->
-      <i class="devicon-html5-plain colored"></i>
-      <i class="devicon-css3-plain colored"></i>
-      <i class="devicon-javascript-plain colored"></i>
-      <i class="devicon-react-original colored"></i>
-      <i class="devicon-laravel-plain colored"></i>
-      <i class="devicon-php-plain colored"></i>
-      <i class="devicon-python-plain colored"></i>
-      <i class="devicon-nodejs-plain colored"></i>
-
-      <!-- Databases & Tools -->
-      <i class="devicon-mysql-plain colored"></i>
-      <i class="devicon-mongodb-plain colored"></i>
-      <i class="devicon-docker-plain colored"></i>
-      <i class="devicon-git-plain colored"></i>
-      <i class="devicon-github-original colored"></i>
-      <i class="devicon-gitlab-plain colored"></i>
-    </div>
-  </div>
-</div>
-
-
-      </div>
-
-
-
-
-
-
-        </main>
-      </div>
-
-      <script src="script.js"></script>
-    </body>
-    </html>
+  <script src="script.js"></script>
+</body>
+</html>
