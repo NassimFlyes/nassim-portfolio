@@ -11,15 +11,12 @@
 
   <div class="wrap">
     <!-- Navigation -->
-    <nav class="left-nav" aria-label="Hauptnavigation">
-      <div class="brand"><i class="fa-solid fa-laptop-code"></i></div>
-      <a class="nav-btn active" href="#ueber"><i class="fa-solid fa-user"></i></a>
-      <a class="nav-btn" href="#studium"><i class="fa-solid fa-graduation-cap"></i></a>
-      <a class="nav-btn" href="#erfahrung"><i class="fa-solid fa-briefcase"></i></a>
-      <a class="nav-btn" href="#kontakt"><i class="fa-solid fa-envelope"></i></a>
-
-      <!-- Dark/Light toggle -->
+    <nav class="nav-bar" aria-label="Hauptnavigation">
       <button id="dark-mode-toggle" class="dark-btn" title="Modus wechseln">🌙</button>
+      <a class="nav-btn active" href="#ueber" title="Über mich"><i class="fa-solid fa-user"></i></a>
+      <a class="nav-btn" href="#studium" title="Studium"><i class="fa-solid fa-graduation-cap"></i></a>
+      <a class="nav-btn" href="#erfahrung" title="Erfahrung"><i class="fa-solid fa-briefcase"></i></a>
+      <a class="nav-btn" href="#kontakt" title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
     </nav>
 
     <!-- Main Content -->
@@ -27,14 +24,13 @@
       <div class="content">
 
         <!-- Terminal Box -->
-        <div class="terminal">
+        <div class="terminal" id="ueber">
           <div class="terminal-header">
             <div class="dot red"></div>
             <div class="dot yellow"></div>
             <div class="dot green"></div>
           </div>
 
-          <!-- Präsentation -->
           <div class="section" id="presentation">
             <span class="prompt">$ whoiam</span>
             <h1>Nassim Flyes</h1>
@@ -54,7 +50,7 @@
           </div>
         </div>
 
-        <!-- === Sprachen separater Block === -->
+        <!-- Sprachen -->
         <div class="sprachen-box" id="sprachen">
           <span class="prompt">$ sprachen</span>
           <div class="languages">
@@ -77,7 +73,61 @@
           </div>
         </div>
 
+        <!-- Studium Section -->
+        <!-- === Studium Section === -->
+<!-- === Studium Section === -->
+<div class="studium-section" id="studium">
+  <span class="prompt">$ studium</span>
+
+  <!-- Education Icon -->
+  <div class="education-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10l-10-5L2 10l10 5 10-5z"/>
+      <path d="M6 12v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5"/>
+    </svg>
+  </div>
+
+  <h2>Bildung</h2>
+
+  <div class="studium-grid">
+    <!-- Card 1 -->
+    <div class="studium-card">
+      <div class="studium-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M8 12a4 4 0 1 0 8 0 4 4 0 1 0-8 0z"/>
+        </svg>
       </div>
+      <h3>Abitur – Schwerpunkt Physik</h3>
+      <ul>
+        <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
+        <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
+        <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
+      </ul>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="studium-card">
+      <div class="studium-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          <path d="M20 6v12M23 9l-3 3 3 3"/>
+        </svg>
+      </div>
+      <h3>ISMO NTIC – Informatik & Netzwerke</h3>
+      <ul>
+        <li><strong>Ort:</strong> Tétouan</li>
+        <li><strong>Note:</strong> Gut (14,66 / 20)</li>
+      </ul>
+      <button class="see-more-btn" onclick="toggleDetails()">Mehr erfahren</button>
+
+      <div id="details" class="details-hidden">
+        <p>Hier können Sie später zusätzliche Informationen hinzufügen – Projekte, Spezialisierung, Praktika usw.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </main>
   </div>
 
