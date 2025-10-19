@@ -1,10 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap");
+
 /* === Grundlayout === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
 body {
   margin: 0;
   font-family: 'Fira Code', monospace;
   background-color: #0f111a;
   color: #fff;
   transition: background 0.4s ease, color 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 /* Layout Wrapper */
@@ -73,12 +86,13 @@ main {
   gap: 40px;
 }
 
-/* === Terminal Box === */
-.terminal {
+/* === Terminal & Sprachen Box === */
+.terminal,
+.sprachen-box {
   background-color: #111827;
   border-radius: 12px;
   padding: 40px;
-  width: 90%;
+  width: 700px;
   max-width: 700px;
   box-shadow: 0 0 30px rgba(0,0,0,0.7);
   transition: background 0.4s ease, color 0.4s ease;
@@ -107,15 +121,6 @@ h1 { font-size: 2rem; margin: 5px 0; }
 .section p { color: #e2e8f0; line-height: 1.5; }
 
 /* === Sprachen Block === */
-.sprachen-box {
-  background-color: #111827;
-  border-radius: 12px;
-  padding: 30px;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.7);
-  transition: background 0.4s ease, color 0.4s ease;
-}
 .sprachen-box .prompt {
   display: block;
   margin-bottom: 20px;
@@ -134,8 +139,9 @@ h1 { font-size: 2rem; margin: 5px 0; }
   border-radius: 12px;
   padding: 15px;
   text-align: center;
-  transition: all 0.3s ease;
+  width: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 .lang-box:hover {
   box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
@@ -145,77 +151,13 @@ h1 { font-size: 2rem; margin: 5px 0; }
 .lang-box p { margin: 0; font-weight: bold; color: #e2e8f0; }
 .lang-box span { font-weight: normal; color: #94a3b8; font-size: 0.9rem; }
 
-.devicon-html5-plain.colored { color: #e34f26; }
-.devicon-css3-plain.colored { color: #264de4; }
-
-@import url("https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #0f0f0f;
-  color: #e5e5e5;
-  font-family: "Fira Code", monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Terminal container */
-.terminal {
-  background: #1a1a1a;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 1000px;
-  box-shadow: 0 0 15px #000a;
-  overflow: hidden;
-  padding-bottom: 2rem;
-}
-
-/* Terminal header dots */
-.terminal-header {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background: #2b2b2b;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.section {
-  padding: 20px 30px;
-}
-
-.prompt {
-  color: #22c55e;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.education-icon {
-  margin-bottom: 20px;
-}
-
-/* Cards grid */
+/* === Education / Studium Cards === */
 .studium-grid {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 .card-container {
@@ -226,6 +168,10 @@ body {
   background: linear-gradient(145deg, #111, #222);
   border-radius: 12px;
   width: 320px;
+  min-height: 280px; /* reduziert für kompaktere Karten */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 25px;
   color: #fff;
   transform: rotateY(25deg) rotateX(10deg);
@@ -288,7 +234,7 @@ body {
   background: #1e1e1e;
   padding: 30px;
   border-radius: 10px;
-  width: 90%;
+  width: 500px;
   max-width: 500px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -314,20 +260,6 @@ body {
   margin-top: 20px;
 }
 
-@media (max-width: 700px) {
-  .studium-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-
-
-
-
-
-
-
 /* === Responsive Navigation (Top) === */
 @media (max-width: 768px) {
   .nav-bar {
@@ -341,6 +273,10 @@ body {
     top: 0;
   }
   main { margin-left: 0; padding-top: 80px; }
+  .terminal,
+  .sprachen-box { width: 95%; max-width: 600px; }
+  .studium-grid { flex-wrap: wrap; }
+  .card { width: 90%; min-height: auto; }
 }
 
 /* === Light Mode === */
@@ -349,22 +285,16 @@ body.light-mode .nav-bar { background-color: #e2e8f0; }
 body.light-mode .nav-btn, body.light-mode .dark-btn { color: #0f172a; }
 body.light-mode .nav-btn.active, body.light-mode .nav-btn:hover,
 body.light-mode .dark-btn:hover { background-color: #16a34a; color: #fff; box-shadow: 0 0 20px rgba(22, 163, 74, 0.5); }
-body.light-mode .terminal { background-color: #f1f5f9; color: #0f172a; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+body.light-mode .terminal, body.light-mode .sprachen-box { background-color: #f1f5f9; color: #0f172a; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
 body.light-mode .terminal .section p { color: #1e293b; }
 body.light-mode .prompt { color: #16a34a; }
 body.light-mode .role { color: #334155; }
-body.light-mode .sprachen-box { background-color: #f1f5f9; color: #0f172a; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
 body.light-mode .lang-box { background-color: #ffffff; border: 1px solid #cbd5e1; }
 body.light-mode .lang-box p { color: #0f172a; }
 body.light-mode .lang-box span { color: #475569; }
 body.light-mode .lang-box:hover { box-shadow: 0 0 25px rgba(22, 163, 74, 0.4); transform: translateY(-4px); }
 
-body.light-mode .studium-section { background-color: #f1f5f9; color: #0f172a; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
 body.light-mode .studium-card { background-color: #ffffff; border: 1px solid #cbd5e1; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
 body.light-mode .studium-card:hover { box-shadow: 0 0 25px rgba(22, 163, 74, 0.4); transform: translateY(-6px); }
-body.light-mode .studium-icon { color: #16a34a; }
 body.light-mode .studium-card h3 { color: #0f172a; }
 body.light-mode .studium-card li { color: #1e293b; }
-
-/* Smooth transitions */
-* { transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease; }
