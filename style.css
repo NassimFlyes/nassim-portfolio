@@ -343,6 +343,118 @@ h1 { font-size: 2rem; margin: 5px 0; }
 
   .languages { grid-template-columns: 1fr; }
 }
+.erfahrung-box {
+  margin-top: 3rem;
+}
+
+.erfahrung-box .prompt {
+  display: block;
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+/* 2 cards per line */
+.erfahrung-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+  .erfahrung-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Styling */
+.exp-card {
+  --grad: #00b050, #111;
+  padding: 2.5rem;
+  background-image: linear-gradient(to bottom left, #e9f6ed, #f5f9f5);
+  border-radius: 2rem;
+  display: grid;
+  grid-template:
+    "title icon"
+    "content content"
+    "bar bar" / 1fr auto;
+  gap: 1.5rem;
+  color: #111;
+  box-shadow:
+    inset -2px 2px #fff,
+    -20px 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    inset -2px 2px #fff,
+    -25px 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.exp-title {
+  grid-area: title;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #00b050;
+}
+
+/* Icon */
+.exp-icon {
+  grid-area: icon;
+  font-size: 3rem;
+}
+
+.exp-icon i {
+  color: transparent;
+  background: linear-gradient(to right, #00b050, #111);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Content */
+.exp-content {
+  grid-area: content;
+}
+
+.exp-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.exp-content li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.exp-content li i {
+  color: #00b050;
+  font-size: 1rem;
+  width: 1.2rem;
+  text-align: center;
+}
+
+/* Gradient bar */
+.exp-card::after {
+  content: "";
+  grid-area: bar;
+  height: 2px;
+  background-image: linear-gradient(90deg, #00b050, #111);
+  border-radius: 1px;
+}
+
+
 
 /* === Light Mode === */
 body.light-mode { background-color: #f8fafc; color: #0f172a; }
