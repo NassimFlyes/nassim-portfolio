@@ -47,342 +47,301 @@
   <div class="wrap">
     <!-- Navigation -->
     <nav class="nav-bar" aria-label="Hauptnavigation">
-      <button id="dark-mode-toggle" class="dark-btn" title="Modus wechseln">🌙</button>
-      <a class="nav-btn active" href="#ueber" title="Über mich"><i class="fa-solid fa-user"></i></a>
-      <a class="nav-btn" href="#studium" title="Studium"><i class="fa-solid fa-graduation-cap"></i></a>
-      <a class="nav-btn" href="#erfahrung" title="Erfahrung"><i class="fa-solid fa-briefcase"></i></a>
-      <a class="nav-btn" href="#kontakt" title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
-    </nav>
+  <a class="nav-btn active" href="#ueber" title="Über mich"><i class="fa-solid fa-user"></i></a>
+  <a class="nav-btn" href="#studium" title="Studium"><i class="fa-solid fa-graduation-cap"></i></a>
+  <a class="nav-btn" href="#erfahrung" title="Erfahrung"><i class="fa-solid fa-briefcase"></i></a>
+  <a class="nav-btn" href="#bewerbung-terminal" title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
+</nav>
 
-    <!-- Main Content -->
-    <main>
-      <div class="content">
+<main>
+  <div class="content">
 
-        <!-- Terminal Box -->
-        <div class="terminal" id="ueber">
-          <div class="terminal-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-          </div>
-
-          <div class="section" id="presentation">
-            <span class="prompt">$ whoiam</span>
-            <h1>Nassim Flyes</h1>
-            <div class="role">Digitaler Entwickler – IT</div>
-          </div>
-
-          <div class="section" id="profil">
-            <span class="prompt">$ profil</span>
-            <p>
-              Hallo, ich heiße Nassim Flyes, bin 21 Jahre alt und arbeite im Bereich IT.
-              Ich suche eine neue Gelegenheit bei Ihnen, um mich weiterzuentwickeln.
-              Ich habe mehr als ein Jahr Erfahrung im Bereich Informatik.
-              Informatik ist meine große Leidenschaft – ich interessiere mich besonders für
-              Programmierung und neue Technologien. Ich lerne gern weiter und möchte meine
-              Fähigkeiten in einem professionellen Umfeld verbessern.
-            </p>
-          </div>
-        </div>
-
-        <!-- Sprachen -->
-        <div class="sprachen-box" id="sprachen">
-          <span class="prompt">$ sprachen</span>
-          <div class="languages">
-            <div class="lang-box">
-              <img src="https://flagcdn.com/w40/ma.png" alt="Arabisch">
-              <p>Arabisch<br><span>Mutter­sprache</span></p>
-            </div>
-            <div class="lang-box">
-              <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
-              <p>Deutsch<br><span>B1 – Gut</span></p>
-            </div>
-            <div class="lang-box">
-              <img src="https://flagcdn.com/w40/gb.png" alt="Englisch">
-              <p>Englisch<br><span>Gut</span></p>
-            </div>
-            <div class="lang-box">
-              <img src="https://flagcdn.com/w40/fr.png" alt="Französisch">
-              <p>Französisch<br><span>Gut</span></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Studium Terminal -->
-        <div class="terminal" id="studium-terminal">
-          <div class="terminal-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-          </div>
-
-          <div class="section" id="studium">
-            <span class="prompt">$ studium</span>
-            <br><br>
-
-            <!-- Cards container -->
-            <div class="studium-grid">
-              <!-- Card 1 -->
-              <div class="card-container">
-                <div class="card">
-                  <h3>Abitur – Schwerpunkt Physik</h3>
-                  <ul>
-                    <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
-                    <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
-                    <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
-                    <li><strong>Dauer:</strong> 2020 bis 2021</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="card-container">
-                <div class="card">
-                  <h3>ISMO NTIC – Informatik & Netzwerke</h3>
-                  <ul>
-                    <li><strong>Ort:</strong> Tétouan</li>
-                    <li><strong>Note:</strong> Gut (14,66 / 20)</li>
-                    <li><strong>Dauer:</strong> 2021 bis 2023</li>
-                  </ul>
-                  <button class="see-more-btn" onclick="togglePopup()">Mehr erfahren</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Popup window -->
-          <div id="popup-overlay" class="popup-hidden" onclick="closePopup(event)">
-            <div class="popup-content">
-              <span class="close-btn" onclick="togglePopup()">&times;</span>
-                    <h3>Während meines Diploms, das zwei Jahre dauerte, habe ich viele Programmiersprachen und Methoden gelernt</h3>
-      <p>
-        Ich habe umfassende Kenntnisse in verschiedenen Programmiersprachen erworben, darunter HTML, CSS, JavaScript, PHP, Python und Node.js. 
-        Zusätzlich habe ich wichtige Software-Entwicklungsmethoden wie <strong>Merise</strong> und <strong>UML</strong> studiert, um komplexe Systeme zu planen und zu modellieren. 
-        Ich habe auch Tools wie <strong>Git</strong>, <strong>GitHub</strong> und <strong>GitLab</strong> intensiv genutzt, um Projekte effizient zu verwalten, Versionen zu kontrollieren und Teamarbeit zu optimieren.
-      </p>
-      <p>
-        Während meiner Ausbildung habe ich auch moderne Frameworks und Datenbanktechnologien kennengelernt, darunter React, Laravel, MySQL, MongoDB und Docker. 
-        Durch diese Erfahrungen konnte ich meine Fähigkeiten in Webentwicklung, Datenmanagement und DevOps erweitern.
-      </p>
-
-
-              <div class="tech-icons">
-                <!-- Programming languages -->
-                <i class="devicon-html5-plain colored"></i>
-                <i class="devicon-css3-plain colored"></i>
-                <i class="devicon-javascript-plain colored"></i>
-                <i class="devicon-react-original colored"></i>
-                <i class="devicon-laravel-plain colored"></i>
-                <i class="devicon-php-plain colored"></i>
-                <i class="devicon-python-plain colored"></i>
-                <i class="devicon-nodejs-plain colored"></i>
-
-                <!-- Databases & Tools -->
-                <i class="devicon-mysql-plain colored"></i>
-                <i class="devicon-mongodb-plain colored"></i>
-                <i class="devicon-docker-plain colored"></i>
-                <i class="devicon-git-plain colored"></i>
-                <i class="devicon-github-original colored"></i>
-                <i class="devicon-gitlab-plain colored"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- erfahrung Terminal -->
-     <div class="terminal" id="erfahrung-terminal">
-  <div class="terminal-header">
-    <div class="dot red"></div>
-    <div class="dot yellow"></div>
-    <div class="dot green"></div>
-  </div>
-
-  <div class="section" id="erfahrung">
-    <span class="prompt">$ erfahrung</span>
-    <br><br>
-
-    <div class="erfahrung-cards">
-      <!-- Solicode Minihackathon -->
-      <div class="exp-card">
-        <div class="exp-title">Solicode Minihackathon</div>
-        <div class="exp-icon"><i class="fa-solid fa-code"></i></div>
-        <div class="exp-content">
-          <ul>
-            <li><i class="fa-solid fa-calendar-days"></i> Mai 2021 in Tanger (SoliCode).</li>
-            <li><i class="fa-solid fa-users"></i> Team aus 4 Schülern vom ISMO NTIC.</li>
-            <li><i class="fa-solid fa-hourglass"></i> 8-Stunden-Programm zur Lösung von Umweltproblemen.</li>
-            <li><i class="fa-solid fa-store"></i> Projekt: Online-Shop für Recycling mit HTML, CSS, JS, Merise & MySQL.</li>
-            <li><i class="fa-solid fa-trophy"></i> 3. Platz – großartige Team-Erfahrung!</li>
-          </ul>
-        </div>
+    <!-- Terminal Box -->
+    <div class="terminal" id="ueber">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
       </div>
 
-      <!-- Adsello Praktikum -->
-      <div class="exp-card">
-        <div class="exp-title">Adsello – Praktikum</div>
-        <div class="exp-icon"><i class="fa-solid fa-laptop-code"></i></div>
-        <div class="exp-content">
-          <ul>
-            <li><i class="fa-solid fa-calendar"></i> Zweimonatiges Praktikum zur Entwicklung einer Schul-App.</li>
-            <li><i class="fa-solid fa-people-group"></i> Teamarbeit mit 8 Entwicklern.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Aufgabe: Quiz-System mit Laravel Livewire & MySQL.</li>
-            <li><i class="fa-solid fa-list-check"></i> Verschiedene Fragentypen: Checkbox, Audio, Video, R/F.</li>
-            <li><i class="fa-solid fa-clock"></i> Zeitlimit-Funktion & automatische Ergebnisbewertung.</li>
-          </ul>
-        </div>
+      <div class="section" id="presentation">
+        <span class="prompt">$ whoiam</span>
+        <h1>Nassim Flyes</h1>
+        <div class="role">Digitaler Entwickler – IT</div>
       </div>
 
-      <!-- Paperless / Uni-App -->
-      <div class="exp-card">
-        <div class="exp-title">Paperless – Uni-App Projekt</div>
-        <div class="exp-icon"><i class="fa-solid fa-database"></i></div>
-        <div class="exp-content">
-          <ul>
-            <li><i class="fa-solid fa-briefcase"></i> Entwicklung einer Universitäts-App als zweites Praktikum.</li>
-            <li><i class="fa-solid fa-server"></i> Backend mit Laravel (Controller, Migration, Seeder, Factory, Request).</li>
-            <li><i class="fa-solid fa-display-code"></i> Frontend mit Vue.js (Tabellen, Filter, Sortierung).</li>
-            <li><i class="fa-solid fa-database"></i> Datenbank: PostgreSQL.</li>
-            <li><i class="fa-solid fa-people-arrows"></i> Zusammenarbeit und Komponenten-Design im Team.</li>
-          </ul>
-        </div>
+      <div class="section" id="profil">
+        <span class="prompt">$ profil</span>
+        <p>
+          Hallo, ich heiße Nassim Flyes, bin 21 Jahre alt und arbeite im Bereich IT.
+          Ich suche eine neue Gelegenheit bei Ihnen, um mich weiterzuentwickeln.
+          Ich habe mehr als ein Jahr Erfahrung im Bereich Informatik.
+          Informatik ist meine große Leidenschaft – ich interessiere mich besonders für
+          Programmierung und neue Technologien. Ich lerne gern weiter und möchte meine
+          Fähigkeiten in einem professionellen Umfeld verbessern.
+        </p>
       </div>
+    </div>
 
-      <!-- Cloud Marketing Hub -->
-      <div class="exp-card">
-        <div class="exp-title">Cloud Marketing Hub</div>
-        <div class="exp-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div class="exp-content">
-          <ul>
-            <li><i class="fa-solid fa-calendar-days"></i> Seit November 2024 als Agent Mailer in Tanger.</li>
-            <li><i class="fa-solid fa-envelope"></i> E-Mail-Traffic für Kunden in den USA (Angebot, Daten, Timing).</li>
-            <li><i class="fa-solid fa-code"></i> Automatisierungen mit Python & JavaScript.</li>
-            <li><i class="fa-solid fa-gears"></i> Tools für Server-Aufwärmung, Reinigung & Newsletter-Abos.</li>
-            <li><i class="fa-solid fa-chart-line"></i> Optimierung von Versand-Effizienz & Performance.</li>
-          </ul>
+    <!-- Sprachen -->
+    <div class="sprachen-box" id="sprachen">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+      <span class="prompt">$ sprachen</span>
+      <div class="languages">
+        <div class="lang-box">
+          <img src="https://flagcdn.com/w40/ma.png" alt="Arabisch">
+          <p>Arabisch<br><span>Mutter­sprache</span></p>
+        </div>
+        <div class="lang-box">
+          <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
+          <p>Deutsch<br><span>B1 – Gut</span></p>
+        </div>
+        <div class="lang-box">
+          <img src="https://flagcdn.com/w40/gb.png" alt="Englisch">
+          <p>Englisch<br><span>Gut</span></p>
+        </div>
+        <div class="lang-box">
+          <img src="https://flagcdn.com/w40/fr.png" alt="Französisch">
+          <p>Französisch<br><span>Gut</span></p>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Video Terminal -->
-<div id="bewerbung-terminal">
-  <div class="terminal-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-    <span class="terminal-title">$ Lerne mich besser kennen</span>
-  </div>
 
-  <div class="bewerbung-content">
-    <!-- Video -->
-    <div class="bewerbung-video">
-      <video controls>
-        <source src="https://raw.githubusercontent.com/NassimFlyes/nassim-portfolio/main/vorstellen.mp4" type="video/mp4">
-        Dein Browser unterstützt das Video-Tag nicht.
-      </video>
-    </div>
+    <!-- Studium Terminal -->
+    <div class="terminal" id="studium-terminal">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
 
-    <!-- Cards -->
-    <div class="bewerbung-cards">
-      <!-- Card 1 -->
-      <div class="bewerbung-card">
-        <div class="card-badge">01</div>
-        <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
-        <h2 class="card-title">Lebenslauf</h2>
-        <p class="card-text">Hier findest du meinen Lebenslauf zum Ansehen oder Herunterladen.</p>
-        <div class="card-buttons">
-          <a href="#" class="btn view"><i class="fa-solid fa-eye"></i> Ansehen</a>
-          <a href="#" class="btn download"><i class="fa-solid fa-download"></i> Download</a>
+      <div class="section" id="studium">
+        <span class="prompt">$ studium</span>
+        <br><br>
+
+        <!-- Cards container -->
+        <div class="studium-grid">
+          <!-- Card 1 -->
+          <div class="card-container">
+            <div class="card">
+              <h3>Abitur – Schwerpunkt Physik</h3>
+              <ul>
+                <li><strong>Schule:</strong> Gymnasium Omar Ibn Khattab</li>
+                <li><strong>Ort:</strong> Oued Laou, Tétouan</li>
+                <li><strong>Note:</strong> Befriedigend (13,47 / 20)</li>
+                <li><strong>Dauer:</strong> 2020 bis 2021</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-container">
+            <div class="card">
+              <h3>ISMO NTIC – Informatik & Netzwerke</h3>
+              <ul>
+                <li><strong>Ort:</strong> Tétouan</li>
+                <li><strong>Note:</strong> Gut (14,66 / 20)</li>
+                <li><strong>Dauer:</strong> 2021 bis 2023</li>
+              </ul>
+              <button class="see-more-btn" onclick="togglePopup()">Mehr erfahren</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="bewerbung-card">
-        <div class="card-badge">02</div>
-        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <h2 class="card-title">Studium & Erfahrung</h2>
-        <p class="card-text">Dokumente zu meinem Studium und bisherigen Erfahrungen.</p>
-        <div class="card-buttons">
-          <a href="#" class="btn view"><i class="fa-solid fa-eye"></i> Ansehen</a>
-          <a href="#" class="btn download"><i class="fa-solid fa-download"></i> Download</a>
+      <!-- Popup window -->
+      <div id="popup-overlay" class="popup-hidden" onclick="closePopup(event)">
+        <div class="popup-content">
+          <span class="close-btn" onclick="togglePopup()">&times;</span>
+          <h3>Während meines Diploms, das zwei Jahre dauerte, habe ich viele Programmiersprachen und Methoden gelernt</h3>
+          <p>
+            Ich habe umfassende Kenntnisse in verschiedenen Programmiersprachen erworben, darunter HTML, CSS, JavaScript, PHP, Python und Node.js. 
+            Zusätzlich habe ich wichtige Software-Entwicklungsmethoden wie <strong>Merise</strong> und <strong>UML</strong> studiert, um komplexe Systeme zu planen und zu modellieren. 
+            Ich habe auch Tools wie <strong>Git</strong>, <strong>GitHub</strong> und <strong>GitLab</strong> intensiv genutzt, um Projekte effizient zu verwalten, Versionen zu kontrollieren und Teamarbeit zu optimieren.
+          </p>
+          <p>
+            Während meiner Ausbildung habe ich auch moderne Frameworks und Datenbanktechnologien kennengelernt, darunter React, Laravel, MySQL, MongoDB und Docker. 
+            Durch diese Erfahrungen konnte ich meine Fähigkeiten in Webentwicklung, Datenmanagement und DevOps erweitern.
+          </p>
+
+          <div class="tech-icons">
+            <i class="devicon-html5-plain colored"></i>
+            <i class="devicon-css3-plain colored"></i>
+            <i class="devicon-javascript-plain colored"></i>
+            <i class="devicon-react-original colored"></i>
+            <i class="devicon-laravel-plain colored"></i>
+            <i class="devicon-php-plain colored"></i>
+            <i class="devicon-python-plain colored"></i>
+            <i class="devicon-nodejs-plain colored"></i>
+            <i class="devicon-mysql-plain colored"></i>
+            <i class="devicon-mongodb-plain colored"></i>
+            <i class="devicon-docker-plain colored"></i>
+            <i class="devicon-git-plain colored"></i>
+            <i class="devicon-github-original colored"></i>
+            <i class="devicon-gitlab-plain colored"></i>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- 3 Icons Line -->
-      <div class="bewerbung-deco">
-        <i class="fa-solid fa-code"></i>
-        <i class="fa-solid fa-terminal"></i>
-        <i class="fa-solid fa-laptop-code"></i>
+    <!-- Erfahrung Terminal -->
+    <div class="terminal" id="erfahrung-terminal">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+
+      <div class="section" id="erfahrung">
+        <span class="prompt">$ erfahrung</span>
+        <br><br>
+
+        <div class="erfahrung-cards">
+          <div class="exp-card">
+            <div class="exp-title">Solicode Minihackathon</div>
+            <div class="exp-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="exp-content">
+              <ul>
+                <li><i class="fa-solid fa-calendar-days"></i> Mai 2021 in Tanger (SoliCode).</li>
+                <li><i class="fa-solid fa-users"></i> Team aus 4 Schülern vom ISMO NTIC.</li>
+                <li><i class="fa-solid fa-hourglass"></i> 8-Stunden-Programm zur Lösung von Umweltproblemen.</li>
+                <li><i class="fa-solid fa-store"></i> Projekt: Online-Shop für Recycling mit HTML, CSS, JS, Merise & MySQL.</li>
+                <li><i class="fa-solid fa-trophy"></i> 3. Platz – großartige Team-Erfahrung!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Adsello – Praktikum</div>
+            <div class="exp-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="exp-content">
+              <ul>
+                <li><i class="fa-solid fa-calendar"></i> Zweimonatiges Praktikum zur Entwicklung einer Schul-App.</li>
+                <li><i class="fa-solid fa-people-group"></i> Teamarbeit mit 8 Entwicklern.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Aufgabe: Quiz-System mit Laravel Livewire & MySQL.</li>
+                <li><i class="fa-solid fa-list-check"></i> Verschiedene Fragentypen: Checkbox, Audio, Video, R/F.</li>
+                <li><i class="fa-solid fa-clock"></i> Zeitlimit-Funktion & automatische Ergebnisbewertung.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Paperless – Uni-App Projekt</div>
+            <div class="exp-icon"><i class="fa-solid fa-database"></i></div>
+            <div class="exp-content">
+              <ul>
+                <li><i class="fa-solid fa-briefcase"></i> Entwicklung einer Universitäts-App.</li>
+                <li><i class="fa-solid fa-server"></i> Backend mit Laravel (Controller, Migration, Seeder, Factory, Request).</li>
+                <li><i class="fa-solid fa-display-code"></i> Frontend mit Vue.js (Tabellen, Filter, Sortierung).</li>
+                <li><i class="fa-solid fa-database"></i> Datenbank: PostgreSQL.</li>
+                <li><i class="fa-solid fa-people-arrows"></i> Zusammenarbeit und Komponenten-Design im Team.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-title">Cloud Marketing Hub</div>
+            <div class="exp-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="exp-content">
+              <ul>
+                <li><i class="fa-solid fa-calendar-days"></i> Seit November 2024 als Agent Mailer in Tanger.</li>
+                <li><i class="fa-solid fa-envelope"></i> E-Mail-Traffic für Kunden in den USA (Angebot, Daten, Timing).</li>
+                <li><i class="fa-solid fa-code"></i> Automatisierungen mit Python & JavaScript.</li>
+                <li><i class="fa-solid fa-gears"></i> Tools für Server-Aufwärmung, Reinigung & Newsletter-Abos.</li>
+                <li><i class="fa-solid fa-chart-line"></i> Optimierung von Versand-Effizienz & Performance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Terminal -->
+    <div id="bewerbung-terminal">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <p class="terminal-title">$ Lerne mich besser kennen</p>
+      </div>
+
+      <div class="bewerbung-content">
+        <div class="bewerbung-video">
+          <video controls>
+            <source src="https://raw.githubusercontent.com/NassimFlyes/nassim-portfolio/main/vorstellen.mp4" type="video/mp4">
+            Dein Browser unterstützt das Video-Tag nicht.
+          </video>
+        </div>
+
+        <div class="bewerbung-cards">
+          <div class="bewerbung-card">
+            <div class="card-badge">01</div>
+            <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h2 class="card-title">Lebenslauf</h2>
+            <p class="card-text">Hier findest du meinen Lebenslauf zum Ansehen.</p>
+            <div class="card-buttons">
+              <a href="https://drive.google.com/file/d/1sZcPn4NcXwXY9h8kzm4EC2JnBd_yGhOW/view?usp=drive_link" target="_blank" class="btn view">
+                <i class="fa-solid fa-eye"></i> Ansehen
+              </a>
+            </div>
+          </div>
+
+          <div class="bewerbung-card">
+            <div class="card-badge">02</div>
+            <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h2 class="card-title">Bewerbungsunterlagen</h2>
+            <p class="card-text">Meine Bewerbungsunterlagen und weitere relevante Informationen zum Ansehen.</p>
+            <div class="card-buttons">
+              <a href="https://drive.google.com/file/d/1hiJRFiPQVfBg2-1nGBDh3obdGkhbARXr/view?usp=drive_link" target="_blank" class="btn view">
+                <i class="fa-solid fa-eye"></i> Ansehen
+              </a>
+            </div>
+          </div>
+
+          <div class="bewerbung-deco">
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-solid fa-terminal"></i>
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-terminal">
+      <div class="footer-content">
+        <div class="footer-icons">
+          <a href="https://www.linkedin.com/in/nassim-flyes-944755253/" target="_blank" class="footer-icon">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/NassimFlyes" target="_blank" class="footer-icon">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.instagram.com/nassimflyes_?igsh=MW12M3Azd3hweGdiNg%3D%3D&utm_source=qr" target="_blank" class="footer-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/212649017977" target="_blank" class="footer-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="mailto:flyesnassim77@gmail.com" class="footer-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+        <div class="footer-contact">
+          <p><i class="fa-solid fa-location-dot"></i> Tanger, Marokko</p>
+          <p><i class="fa-solid fa-envelope"></i> flyesnassim77@gmail.com</p>
+        </div>
+
+        <p class="footer-text">Developed by <span>Nassim</span> © 2025</p>
       </div>
     </div>
   </div>
-</div>
-
-<!-- === FOOTER TERMINAL === -->
-<div id="footer-terminal">
-  <div class="terminal-header">
-    <div class="dot red"></div>
-    <div class="dot yellow"></div>
-    <div class="dot green"></div>
-    <span class="terminal-title">Kontakt & Social Media</span>
-  </div>
-
-  <div class="footer-content">
-    <!-- === Social Media Icons === -->
-    <div class="footer-icons">
-      <a href="https://www.linkedin.com" target="_blank" class="footer-icon">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-      <a href="https://github.com" target="_blank" class="footer-icon">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="https://www.instagram.com" target="_blank" class="footer-icon">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/4915123456789" target="_blank" class="footer-icon">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-      <a href="mailto:nassim@example.com" class="footer-icon">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </div>
-
-    <!-- === Contact Information === -->
-    <div class="footer-contact">
-      <p><i class="fa-solid fa-location-dot"></i> Tanger, Marokko</p>
-      <p><i class="fa-solid fa-envelope"></i> nassim@example.com</p>
-    </div>
-
-    <!-- === Credit Line === -->
-    <p class="footer-text">Developed by <span>Nassim</span> © 2025</p>
-  </div>
-</div>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-  </div>
-</div>
-
-
-
-
-
-
-
-    </main>
-  </div>
-
-<!-- Then your JS -->
+</main>
 <script src="script.js"></script>
 
 
