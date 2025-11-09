@@ -495,151 +495,315 @@ body.light-mode .card li { color: #1e293b; }
 /* small utility helpers */
 .hidden { display: none !important; }
 .center { display:flex; justify-content:center; align-items:center; }
-
 /* === Terminal Container === */
-
-/* === Terminal Container === */
-#video-terminal {
+#bewerbung-terminal {
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background-color: #111827;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
   overflow: hidden;
-  padding: 20px;
+  color: #e5e5e5;
   font-family: 'Fira Code', monospace;
-  color: #fff;
 }
 
-/* === Terminal Header Dots === */
-#video-terminal .terminal-header {
+/* === Terminal Header === */
+#bewerbung-terminal .terminal-header {
   display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
-  align-items: center; /* center dots vertically */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #1e1e1e;
 }
 
-#video-terminal .dot {
+.terminal-header .dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  flex-shrink: 0;
+  flex: 0 0 14px;
+}
+.dot.red { background-color: #f56565; }
+.dot.yellow { background-color: #ecc94b; }
+.dot.green { background-color: #48bb78; }
+
+#bewerbung-terminal .terminal-title {
+  margin-left: 10px;
+  color: #48bb78; /* updated title color */
+  font-weight: 600;
+  font-size: 16px;
 }
 
-#video-terminal .dot.red { background-color: #ff605c; }
-#video-terminal .dot.yellow { background-color: #ffbd44; }
-#video-terminal .dot.green { background-color: #00ca4e; }
+/* === Layout === */
+.bewerbung-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 50px 40px;
+  flex-wrap: wrap;
+}
 
-/* === Prompt === */
-#video-terminal .prompt {
-  color: #00ff99;
-  font-weight: bold;
+/* === Video === */
+.bewerbung-video {
+  flex: 1;
+  max-width: 400px;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #0f0f0f;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.bewerbung-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* === Video Container === */
-#video-terminal .video-container {
-  margin: 20px 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-#video-terminal video {
-  width: 100%;
-  max-width: 400px; /* iPhone-like width */
-  height: auto;
-  border-radius: 8px;
-  background-color: #000;
-}
-
-
-
-.video-contact-form {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.video-contact-form form {
-  width: 100%;
-  max-width: 400px; /* same as video width */
+/* === Cards === */
+.bewerbung-cards {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* space between fields */
+  justify-content: space-between;
+  max-width: 500px;
+  gap: 25px;
 }
 
-.form-group {
+/* === Card === */
+.bewerbung-card {
   position: relative;
-  width: 100%;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  padding: 25px 20px 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 16px 12px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.2); /* transparent */
-  color: #fff;
-  font-size: 16px;
-  outline: none;
-  resize: none;
-  transition: all 0.3s ease;
+.bewerbung-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
-
-.form-group label {
+.card-badge {
   position: absolute;
-  top: 16px;
-  left: 12px;
-  color: #ccc;
-  font-size: 16px;
-  pointer-events: none;
-  transition: all 0.3s ease;
+  top: -12px;
+  right: -12px;
+  background: #48bb78;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.card-icon {
+  font-size: 28px;
+  color: #48bb78;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #00ff99;
-  background-color: rgba(0, 0, 0, 0.4);
+/* === Buttons === */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+.btn.view { background-color: #48bb78; color: #fff; }
+.btn.download { background-color: #000; color: #fff; }
+.btn:hover { transform: scale(1.04); opacity: 0.9; }
+
+/* === Decorative Icons Line === */
+.bewerbung-deco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #48bb78;
+  font-size: 38px;
+  opacity: 0.9;
+  transform: translateY(-5px);
 }
 
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label,
-.form-group textarea:focus + label,
-.form-group textarea:not(:placeholder-shown) + label {
-  top: -8px;
-  left: 10px;
-  font-size: 12px;
-  color: #00ff99;
-  background-color: rgba(0,0,0,0.2);
-  padding: 0 4px;
-  border-radius: 4px;
+/* === Responsive === */
+@media (max-width: 900px) {
+  .bewerbung-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .bewerbung-video {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .bewerbung-cards {
+    width: 100%;
+    max-width: 460px;
+    align-items: center;
+  }
+
+  .bewerbung-card {
+    width: 100%;
+    text-align: center;
+  }
+
+  .bewerbung-deco {
+    margin-top: 40px;
+    font-size: 32px;
+  }
 }
 
-.video-contact-form button {
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  background-color: #00ff99;
-  color: #1e1e1e;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
+@media (max-width: 500px) {
+  #bewerbung-terminal {
+    width: 95%;
+  }
+  .bewerbung-video {
+    max-width: 320px;
+  }
+  .bewerbung-card {
+    padding: 20px 16px 25px;
+  }
+  .bewerbung-deco {
+    margin-top: 30px;
+    gap: 25px;
+    font-size: 28px;
+  }
 }
-
-.video-contact-form button:hover {
-  background-color: #00cc7a;
-}
-
-.success-message {
-  display: none;
-  margin-top: 8px;
+#footer-terminal {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: #111827;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #e5e5e5;
+  font-family: 'Fira Code', monospace;
   text-align: center;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 8px;
+  padding-bottom: 30px;
 }
+
+/* Header */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #1e1e1e;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.dot.red { background-color: #f56565; }
+.dot.yellow { background-color: #ecc94b; }
+.dot.green { background-color: #48bb78; }
+.terminal-title {
+  margin-left: 10px;
+  color: #48bb78;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Social icons */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin: 25px 0;
+}
+.footer-icon {
+  color: #48bb78;
+  font-size: 26px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.footer-icon:hover {
+  color: #22ff99;
+  text-shadow: 0 0 12px rgba(72, 187, 120, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Contact info */
+.footer-contact {
+  color: #ccc;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+.footer-contact i {
+  color: #48bb78;
+  margin-right: 8px;
+}
+
+/* Footer text */
+.footer-text {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 20px;
+  letter-spacing: 0.5px;
+}
+.footer-text span {
+  color: #48bb78;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #footer-terminal {
+    width: 95%;
+  }
+  .footer-icons {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .footer-icon {
+    font-size: 24px;
+  }
+  .footer-contact {
+    font-size: 13px;
+  }
+}
+
 

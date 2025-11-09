@@ -7,9 +7,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" rel="stylesheet">  
   <link rel="stylesheet" href="style.css">
 </head>
+<style>
+@media (max-width: 768px) {
+  #erfahrung-terminal {
+    padding: 10px !important;
+  }
+  .erfahrung-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  .exp-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+  }
+  .exp-title {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+  .exp-content ul {
+    padding-left: 15px !important;
+  }
+  .exp-content {
+    font-size: 0.9rem !important;
+  }
+  .exp-icon {
+    text-align: center !important;
+    margin-bottom: 8px !important;
+  }
+}
+</style>
 <body>
   <div class="wrap">
     <!-- Navigation -->
@@ -156,7 +189,7 @@
           </div>
         </div>
         <!-- erfahrung Terminal -->
-        <div class="terminal" id="erfahrung-terminal">
+     <div class="terminal" id="erfahrung-terminal">
   <div class="terminal-header">
     <div class="dot red"></div>
     <div class="dot yellow"></div>
@@ -229,31 +262,110 @@
       </div>
     </div>
   </div>
-        </div>
-        <!-- Video Terminal -->
-        <div class="video-contact-form">
-      <form id="video-feedback-form">
-        <div class="form-group">
-          <input type="text" name="from_name" id="name" required placeholder=" ">
-          <label for="name">Ihr Name</label>
-        </div>
+</div>
+<!-- Video Terminal -->
+<div id="bewerbung-terminal">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="terminal-title">$ Lerne mich besser kennen</span>
+  </div>
 
-        <div class="form-group">
-          <input type="email" name="from_email" id="email" required placeholder=" ">
-          <label for="email">Ihre E-Mail</label>
-        </div>
+  <div class="bewerbung-content">
+    <!-- Video -->
+    <div class="bewerbung-video">
+      <video controls>
+        <source src="https://raw.githubusercontent.com/NassimFlyes/nassim-portfolio/main/vorstellen.mp4" type="video/mp4">
+        Dein Browser unterstützt das Video-Tag nicht.
+      </video>
+    </div>
 
-        <div class="form-group">
-          <textarea name="message" id="message" rows="3" required placeholder=" ">
-    Hallo Nassim, ich habe dein Video gesehen und wollte dir sagen...
-          </textarea>
-          <label for="message">Ihre Nachricht</label>
+    <!-- Cards -->
+    <div class="bewerbung-cards">
+      <!-- Card 1 -->
+      <div class="bewerbung-card">
+        <div class="card-badge">01</div>
+        <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <h2 class="card-title">Lebenslauf</h2>
+        <p class="card-text">Hier findest du meinen Lebenslauf zum Ansehen oder Herunterladen.</p>
+        <div class="card-buttons">
+          <a href="#" class="btn view"><i class="fa-solid fa-eye"></i> Ansehen</a>
+          <a href="#" class="btn download"><i class="fa-solid fa-download"></i> Download</a>
         </div>
+      </div>
 
-        <button type="submit">Senden</button>
-        <div id="success-message" class="success-message"></div>
-      </form>
+      <!-- Card 2 -->
+      <div class="bewerbung-card">
+        <div class="card-badge">02</div>
+        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h2 class="card-title">Studium & Erfahrung</h2>
+        <p class="card-text">Dokumente zu meinem Studium und bisherigen Erfahrungen.</p>
+        <div class="card-buttons">
+          <a href="#" class="btn view"><i class="fa-solid fa-eye"></i> Ansehen</a>
+          <a href="#" class="btn download"><i class="fa-solid fa-download"></i> Download</a>
         </div>
+      </div>
+
+      <!-- 3 Icons Line -->
+      <div class="bewerbung-deco">
+        <i class="fa-solid fa-code"></i>
+        <i class="fa-solid fa-terminal"></i>
+        <i class="fa-solid fa-laptop-code"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- === FOOTER TERMINAL === -->
+<div id="footer-terminal">
+  <div class="terminal-header">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <span class="terminal-title">Kontakt & Social Media</span>
+  </div>
+
+  <div class="footer-content">
+    <!-- === Social Media Icons === -->
+    <div class="footer-icons">
+      <a href="https://www.linkedin.com" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/4915123456789" target="_blank" class="footer-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="mailto:nassim@example.com" class="footer-icon">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- === Contact Information === -->
+    <div class="footer-contact">
+      <p><i class="fa-solid fa-location-dot"></i> Tanger, Marokko</p>
+      <p><i class="fa-solid fa-envelope"></i> nassim@example.com</p>
+    </div>
+
+    <!-- === Credit Line === -->
+    <p class="footer-text">Developed by <span>Nassim</span> © 2025</p>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 
 
@@ -270,8 +382,6 @@
     </main>
   </div>
 
-<!-- Include EmailJS SDK first -->
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
 <!-- Then your JS -->
 <script src="script.js"></script>
 
