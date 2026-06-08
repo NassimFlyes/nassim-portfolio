@@ -46,6 +46,11 @@ body {
   align-items: flex-start;
   min-height: 100vh;
 }
+.nav-btn.active {
+  background: #22c55e;
+  color: #111827;
+  box-shadow: 0 0 15px #22c55e;
+}
 
 /* Layout Wrapper */
 .wrap {
@@ -94,15 +99,7 @@ body {
   margin: 40px auto;   /* center the terminal */
 }
 
-/* active / hover nav */
-.nav-bar .nav-btn.active,
-.nav-bar .nav-btn:hover,
-.nav-bar .dark-btn:hover {
-  background-color: #1a1f2d;
-  color: #22c55e;
-  box-shadow: 0 0 18px rgba(34, 197, 94, 0.6);
-  transform: translateY(-3px);
-}
+
 
 /* Main Content */
 main {
@@ -586,6 +583,59 @@ body.light-mode .card li { color: #1e293b; }
   color: #48bb78; /* updated title color */
   font-weight: 600;
   font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+  #bewerbung-terminal {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .terminal-header,
+  .terminal-title {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .bewerbung-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .bewerbung-video {
+    width: 100%;
+  }
+
+  .bewerbung-video video {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .bewerbung-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .bewerbung-card {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .card-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bewerbung-deco {
+    display: none; /* optional: hide icons in phone */
+  }
 }
 
 /* === Layout === */
