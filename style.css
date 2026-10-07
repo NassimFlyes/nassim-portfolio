@@ -1,6 +1,40 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Code:400,500&display=swap");
 
+.fab-link {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  font-family: inherit;            /* kheddem nafs font monospace dyalek */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  text-decoration: none;
+  background: rgba(17, 24, 46, 0.85);
+  border: 1px solid rgba(34, 197, 94, 0.45);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 0 rgba(34, 197, 94, 0.4);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.fab-link .prompt { color: #22c55e; }
+.fab-link .arrow  { color: #22c55e; transition: transform .2s ease; }
 
+.fab-link:hover {
+  transform: translateY(-3px);
+  border-color: #22c55e;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 18px rgba(34, 197, 94, 0.35);
+}
+.fab-link:hover .arrow { transform: translate(2px, -2px); }
+
+/* f telefon: kheli ghir icon/text sghir */
+@media (max-width: 600px) {
+  .fab-link { right: 14px; bottom: 14px; padding: 10px 14px; font-size: 0.8rem; }
+}
 /* === Mobile view (phones) === */
 @media (max-width: 768px) {
   body {
